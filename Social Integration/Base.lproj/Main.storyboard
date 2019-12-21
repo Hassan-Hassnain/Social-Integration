@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,126 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Social_Integration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="84h-rf-baE">
+                                <rect key="frame" x="20" y="207" width="374" height="186"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3C-bQ-MmR" customClass="CustomButton" customModule="Social_Integration" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="0.0" width="334" height="44"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="LogIn"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O2S-Hv-r7C"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHG-Kh-kgX" customClass="CustomButton" customModule="Social_Integration" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="71" width="334" height="44"/>
+                                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Log out"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="logoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lTi-iQ-bqf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwl-OP-gor" customClass="FBSDKLoginButton">
+                                        <rect key="frame" x="20" y="142" width="334" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="FB Login"/>
+                                        <connections>
+                                            <action selector="fbLoginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FlR-cX-OhY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="OHG-Kh-kgX" firstAttribute="top" secondItem="84h-rf-baE" secondAttribute="top" constant="71" id="34i-XX-7kx"/>
+                                    <constraint firstItem="vwl-OP-gor" firstAttribute="top" secondItem="84h-rf-baE" secondAttribute="baseline" constant="5" id="4XU-dR-1C8"/>
+                                    <constraint firstAttribute="trailing" secondItem="OHG-Kh-kgX" secondAttribute="trailing" constant="20" id="8sD-Wa-dRV"/>
+                                    <constraint firstItem="l3C-bQ-MmR" firstAttribute="top" relation="lessThanOrEqual" secondItem="84h-rf-baE" secondAttribute="top" constant="5" id="Iv0-Qi-WuE"/>
+                                    <constraint firstItem="OHG-Kh-kgX" firstAttribute="leading" secondItem="84h-rf-baE" secondAttribute="leading" constant="20" id="K59-wh-izI"/>
+                                    <constraint firstItem="vwl-OP-gor" firstAttribute="leading" secondItem="84h-rf-baE" secondAttribute="leading" constant="20" id="K91-Sj-53Y"/>
+                                    <constraint firstItem="OHG-Kh-kgX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="l3C-bQ-MmR" secondAttribute="bottom" constant="5" id="cxk-Pr-Ucj"/>
+                                    <constraint firstItem="l3C-bQ-MmR" firstAttribute="leading" secondItem="84h-rf-baE" secondAttribute="leading" constant="20" id="kR3-vo-lRT"/>
+                                    <constraint firstAttribute="trailing" secondItem="vwl-OP-gor" secondAttribute="trailing" constant="20" id="okR-WR-vHb"/>
+                                    <constraint firstAttribute="trailing" secondItem="l3C-bQ-MmR" secondAttribute="trailing" constant="20" id="pTM-nA-7Fp"/>
+                                    <constraint firstAttribute="bottom" secondItem="OHG-Kh-kgX" secondAttribute="bottom" constant="71" id="w6Z-Wp-j8d"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYi-a6-5ag">
+                                <rect key="frame" x="20" y="64" width="374" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Pe5-qI-bfI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dYi-a6-5ag" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4Op-8T-Wac"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="84h-rf-baE" secondAttribute="trailing" constant="20" id="5EF-pe-NTj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dYi-a6-5ag" secondAttribute="trailing" constant="20" id="5cz-x1-LH8"/>
+                            <constraint firstItem="84h-rf-baE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="b8I-CD-c8H"/>
+                            <constraint firstItem="dYi-a6-5ag" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ng0-Nj-M2q"/>
+                            <constraint firstItem="84h-rf-baE" firstAttribute="top" secondItem="dYi-a6-5ag" secondAttribute="bottom" constant="100" id="tnm-OR-uXB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="fbLogiButton" destination="vwl-OP-gor" id="xXj-pO-f2g"/>
+                        <outlet property="loginButton" destination="l3C-bQ-MmR" id="3eN-tM-nhc"/>
+                        <outlet property="logoutButton" destination="OHG-Kh-kgX" id="a8k-SC-TNt"/>
+                        <segue destination="7RR-Vy-oau" kind="presentation" identifier="Go" customClass="DropSegue" customModule="Social_Integration" customModuleProvider="target" id="f0R-uQ-GfE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="963.76811594202911" y="141.96428571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ish-Zs-13p">
+            <objects>
+                <viewController id="7RR-Vy-oau" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3kH-kS-EIO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ypO-Xv-1Mp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7j6-TJ-oLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629" y="142"/>
         </scene>
     </scenes>
 </document>
